@@ -14,6 +14,8 @@ import java.net.URL;
 import javafx.application.Application;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.openstreetmap.gui.jmapviewer.Demo; //to create map object 
+
 
 /**
  *
@@ -71,7 +73,10 @@ public class PlaceInfo {
         pw.write(sb.toString());
         pw.close();
         System.out.println("done!");
-     
+		
+         //Create map
+     Demo d = new Demo();  
+     d.setVisible(true);
      }
         }
      /*public static void main(String[] args) throws Exception{
