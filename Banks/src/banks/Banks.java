@@ -54,7 +54,7 @@ public class Banks extends JApplet {
                 } catch (Exception e) {
                 }
                 
-                JFrame frame = new JFrame("JavaFX 2 in Swing");
+                JFrame frame = new JFrame("Real-Time Banks Crowds");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 
                 JApplet applet = new Banks();
