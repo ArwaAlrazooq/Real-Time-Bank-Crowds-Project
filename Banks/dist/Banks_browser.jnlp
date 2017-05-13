@@ -11,25 +11,8 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Banks.jar" size="25307682" download="eager" />
-    <jar href="lib/commons-codec-1.9.jar" size="263965" download="eager" />
-    <jar href="lib/commons-logging-1.2.jar" size="61829" download="eager" />
-    <jar href="lib/geoip2-2.8.1-javadoc.jar" size="233852" download="eager" />
-    <jar href="lib/geoip2-2.8.1-sources.jar" size="32324" download="eager" />
-    <jar href="lib/geoip2-2.8.1.jar" size="43958" download="eager" />
-    <jar href="lib/gson-2.2.2.jar" size="189285" download="eager" />
-    <jar href="lib/httpclient-4.5.3.jar" size="747794" download="eager" />
-    <jar href="lib/httpcore-4.4.6.jar" size="323824" download="eager" />
-    <jar href="lib/jackson-all-1.9.0.jar" size="1105958" download="eager" />
-    <jar href="lib/jackson-annotations-2.8.0.jar" size="55784" download="eager" />
-    <jar href="lib/jackson-core-2.8.7.jar" size="282314" download="eager" />
-    <jar href="lib/jackson-databind-2.8.7.jar" size="1237433" download="eager" />
-    <jar href="lib/java-json.jar" size="84697" download="eager" />
+    <jar href="Banks.jar" size="6489" download="eager" />
     <jar href="lib/json-20131018.jar" size="65139" download="eager" />
-    <jar href="lib/json-20160212.jar" size="49176" download="eager" />
-    <jar href="lib/json-lib-2.4-jdk15.jar" size="159123" download="eager" />
-    <jar href="lib/json-simple-1.1.jar" size="16046" download="eager" />
-    <jar href="lib/maxmind-db-1.2.2.jar" size="21693" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="banks.Banks"  name="Banks" >
   </applet-desc>
