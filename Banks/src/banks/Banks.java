@@ -144,7 +144,7 @@ grid.add(cityList, 2, 6);
                 System.out.println(""+bankNamesList.getValue()+"\n"+cityList.getValue());
                 try{
                function=2;
-               
+               LowestCrwodBranch2 l = new LowestCrwodBranch2(bankNamesList.getValue(),cityList.getValue());
                 
                 }
                 catch(Exception e){ 

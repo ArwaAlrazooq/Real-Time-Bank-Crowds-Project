@@ -201,11 +201,13 @@ public class Demo extends JFrame implements JMapViewerEventListener {
       for (String result: countarr) {
     
           String[] branch1 = result.split(",");
-          //Compair
-        
-        
+         if(banks.Banks.function == 2&&functinlowest)
+         {  
+          map[i]  = new MapMarkerDot( riyadh, "The Closest & Lowest " +branch1[0], new Coordinate(Double.parseDouble( branch1[2]),Double.parseDouble( branch1[1])));
+           functinlowest= false;}
+         else{
           map[i]  = new MapMarkerDot( riyadh,branch1[0], new Coordinate(Double.parseDouble( branch1[2]),Double.parseDouble( branch1[1])));
-         
+         }
           map().addMapMarker(map[i]);
           i++;
           
