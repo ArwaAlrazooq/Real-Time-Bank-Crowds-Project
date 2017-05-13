@@ -5,12 +5,6 @@
  */
 package banks;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javafx.application.Platform;
@@ -28,7 +22,11 @@ import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
 import javafx.application.Application;
+import org.openstreetmap.gui.jmapviewer.*;
 import javax.swing.JComboBox;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 
 /**
  *
@@ -36,10 +34,10 @@ import javax.swing.JComboBox;
  */
 public class Banks extends JApplet {
     
-    private static final int JFXPANEL_WIDTH_INT = 300;
+    private static final int JFXPANEL_WIDTH_INT = 350;
     private static final int JFXPANEL_HEIGHT_INT = 250;
     private static JFXPanel fxContainer;
-
+    public static int function=0;
     /**
      * @param args the command line arguments
      */
@@ -99,13 +97,22 @@ grid.setHgap(5);
  
         Text bank = new Text("Bank Name:");
         Text city = new Text("City:");
+        //Scene scene = new Scene(root, 400, 300, Color.WHITE);
+
+// Lists
+        ComboBox<String> bankNamesList = new ComboBox<String>();
+        bankNamesList.getItems().addAll("AlRajhiBank","AlEnmaBank");
+        bankNamesList.setValue("Bank Name");
+        ComboBox<String> cityList = new ComboBox<String>();
+        cityList.getItems().addAll("Riyadh","Jeddah","Makkah");
+        cityList.setValue("City");
+ //grid.add(cmb, 2, 0);
+ 
+// Lists2
 grid.add(bank, 2, 3);
-TextField text = new TextField();
-grid.add(text, 2, 4);
+grid.add(bankNamesList, 2, 4);
 grid.add(city, 2, 5);
-TextField text2 = new TextField();
-text2.setPrefColumnCount(10);
-grid.add(text2, 2, 6);
+grid.add(cityList, 2, 6);
 
 
         Button btn = new Button();
@@ -114,11 +121,31 @@ grid.add(text2, 2, 6);
             
             @Override
             public void handle(ActionEvent event) {
-                
-                System.out.println(""+text.getText()+"\n"+text2.getText());
+                // Lists3
+
+                System.out.println(""+ bankNamesList.getValue() +"\n"+cityList.getValue());
                 try{
-                PlaceInfo p = new PlaceInfo(text.getText(),text2.getText());
- 
+               PlaceInfo p = new PlaceInfo(bankNamesList.getValue(),cityList.getValue());
+               function=1;
+                
+                }
+                catch(Exception e){ 
+                }
+            }
+        });
+         Button btn2 = new Button();
+        btn2.setText("Lowest");
+        btn2.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event2) {
+                // Lists4
+
+                System.out.println(""+bankNamesList.getValue()+"\n"+cityList.getValue());
+                try{
+               function=2;
+               
+                
                 }
                 catch(Exception e){ 
                 }
@@ -127,6 +154,8 @@ grid.add(text2, 2, 6);
         
         
 grid.add(btn, 2, 8); 
+grid.add(btn2, 3, 8); 
+
 fxContainer.setScene(new Scene(grid));
 	fxContainer.show();
         
