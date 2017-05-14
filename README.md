@@ -20,5 +20,7 @@ Display in real time the current number of customers within a bank branches.
 
 Identify the least crowded branch that is near to the user location
 
+# Read more
+Check out the wiki to know  about us and get more details about the installation, how the application works and how to contibute!
 
 
