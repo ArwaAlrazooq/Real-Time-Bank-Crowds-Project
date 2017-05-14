@@ -18,6 +18,7 @@ import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.model.CityResponse;
 import com.maxmind.geoip2.record.Location;
 import java.io.File;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import org.json.JSONObject;
 import org.json.JSONArray;
@@ -36,8 +37,9 @@ public class LowestCrwodBranch2 {
     BufferedReader r = new BufferedReader(new InputStreamReader(con1.getInputStream()));
     str = r.readLine();
     //GEOIP taks the external ip and get the location
-    File dbFile = new File("src\\banks\\GeoLite2-City.mmdb");
-       DatabaseReader reader = new DatabaseReader.Builder(dbFile).build();
+    //File dbFile = new File("src\\banks\\GeoLite2-City.mmdb");
+    InputStream inStream = this.getClass().getClassLoader().getResourceAsStream("GeoLite2-City.mmdb");
+       DatabaseReader reader = new DatabaseReader.Builder(inStream).build();
        InetAddress ipAddress = InetAddress.getByName(str);
        CityResponse responseGeo = reader.city(ipAddress);
        Location locationGeo = responseGeo.getLocation();
