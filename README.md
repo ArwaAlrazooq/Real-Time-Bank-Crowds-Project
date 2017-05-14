@@ -8,9 +8,6 @@ it is PC application that provide the user with crowds of different branches of 
 
 It is known that banks are among the places that get crowded the most. A lot of time is wasted because of waiting. Therefore, if there is no immediate solution for the crowd itself, at least a person should be able to avoid the crowded times.
 
-# Project Aim:
-- Provide each person an easy and reachable solution 
-- provide the user with an overview of banks situations in his city. 
 
 # Services:
 
