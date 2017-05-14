@@ -6,7 +6,12 @@
 package banks;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.event.ActionEvent;
@@ -27,15 +32,16 @@ import javax.swing.JComboBox;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-
+import javafx.scene.image.Image ;
+import javafx.scene.image.ImageView;
 /**
  *
  * @author User
  */
 public class Banks extends JApplet {
     
-    private static final int JFXPANEL_WIDTH_INT = 350;
-    private static final int JFXPANEL_HEIGHT_INT = 250;
+    private static final int JFXPANEL_WIDTH_INT = 490;
+    private static final int JFXPANEL_HEIGHT_INT = 500;
     private static JFXPanel fxContainer;
     public static int function=0;
     /**
@@ -86,37 +92,48 @@ public class Banks extends JApplet {
         });
     }
     
-    private void createScene() {
+    private void createScene()  {
         
+GridPane grid = new GridPane();
+grid.setMinSize(500, 1000);
+grid.setPadding(new Insets(40, 40, 10, 20));
+grid.setVgap(10);
+grid.setHgap(-225);
+grid.setStyle("-fx-background-color: #ffffff;");
+ try{
+FileInputStream imageStream = new FileInputStream("src\\banks\\logo.jpg");
+ Image image = new Image(imageStream);
+grid.add(new ImageView(image), 0, 0);
+ }
+ catch (Exception e){
+     
+ }
 
-        	GridPane grid = new GridPane();
-grid.setMinSize(300, 300);
-grid.setPadding(new Insets(40, 40, 10, 60));
-grid.setVgap(5);
-grid.setHgap(5);
- 
+
         Text bank = new Text("Bank Name:");
         Text city = new Text("City:");
         //Scene scene = new Scene(root, 400, 300, Color.WHITE);
 
 // Lists
         ComboBox<String> bankNamesList = new ComboBox<String>();
+        bankNamesList.setMaxWidth(400);
         bankNamesList.getItems().addAll("AlRajhiBank","AlEnmaBank");
         bankNamesList.setValue("Bank Name");
         ComboBox<String> cityList = new ComboBox<String>();
         cityList.getItems().addAll("Riyadh","Jeddah","Makkah");
+        cityList.setMaxWidth(200);
         cityList.setValue("City");
  //grid.add(cmb, 2, 0);
  
 // Lists2
-grid.add(bank, 2, 3);
-grid.add(bankNamesList, 2, 4);
-grid.add(city, 2, 5);
-grid.add(cityList, 2, 6);
+grid.add(bank, 2, 5);
+grid.add(bankNamesList, 1, 5);
+grid.add(city, 2, 6);
+grid.add(cityList, 1, 6);
 
 
         Button btn = new Button();
-        btn.setText("Enter");
+        btn.setText("Check Crowds");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
@@ -134,7 +151,7 @@ grid.add(cityList, 2, 6);
             }
         });
          Button btn2 = new Button();
-        btn2.setText("Lowest");
+        btn2.setText("Get Lowest Crowd");
         btn2.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
@@ -153,8 +170,8 @@ grid.add(cityList, 2, 6);
         });
         
         
-grid.add(btn, 2, 8); 
-grid.add(btn2, 3, 8); 
+grid.add(btn, 2, 7); 
+grid.add(btn2, 1, 7); 
 
 fxContainer.setScene(new Scene(grid));
 	fxContainer.show();
