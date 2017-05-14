@@ -6,17 +6,12 @@
 package banks;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.InputStream;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javax.swing.JApplet;
 import javax.swing.JFrame;
@@ -24,12 +19,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-import javafx.scene.control.TextField;
 import javafx.geometry.Insets;
-import javafx.application.Application;
-import org.openstreetmap.gui.jmapviewer.*;
-import javax.swing.JComboBox;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image ;
@@ -101,8 +91,8 @@ grid.setVgap(10);
 grid.setHgap(-225);
 grid.setStyle("-fx-background-color: #ffffff;");
  try{
-FileInputStream imageStream = new FileInputStream("src\\banks\\logo.jpg");
- Image image = new Image(imageStream);
+InputStream inStream = this.getClass().getClassLoader().getResourceAsStream("logo.jpg");
+ Image image = new Image(inStream);
 grid.add(new ImageView(image), 0, 0);
  }
  catch (Exception e){
