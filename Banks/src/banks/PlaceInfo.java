@@ -62,8 +62,6 @@ public class PlaceInfo {
              sb.append(herenow.get("count"));
              sb.append(',');
              JSONObject location = arr1.getJSONObject("location");
-             //JSONArray latLng = location.getJSONArray("labeledLatLngs");
-            // JSONObject arr2= latLng.getJSONObject(0);
              sb.append(location.get("lng"));
              sb.append(',');
              sb.append(location.get("lat"));
